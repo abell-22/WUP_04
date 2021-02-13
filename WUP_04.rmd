@@ -11,7 +11,7 @@ output:
 require(knitr)
 require(tidyverse)
 require(tigerstats)
-
+GSSdata <- read.csv(file="GSScsv.csv")
 ```
 
 # Introduction
@@ -32,9 +32,21 @@ $H_a$ There is a significant difference in average score on the WORDSUM test bet
 
 ## Descriptive Results
 
+
 ### Graphical Descriptive Results
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question!-->
+
+   
+#### Using ggplot
+
+```{r}
+basicCN <- ggplot(GSSdata,aes(x=DEGREE,y=WORDSUM))
+
+basicCN + geom_boxplot()
+```
+  
+From the Graph it looks like Graduate does better than LT High School and  High School. 
 
 ### Numerical Descriptive Results
 
